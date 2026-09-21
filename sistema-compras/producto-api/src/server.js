@@ -1,17 +1,17 @@
 require("dotenv").config();
 const express = require("express");
-const clientesRoutes = require("./routes/clientes.routes");
+const productosRoutes = require("./routes/productos.routes");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.use(express.json());
-app.use("/clientes", clientesRoutes);
+app.use("/productos", productosRoutes);
 
 app.get("/", (req, res) => {
-  res.status(200).json({ mensaje: "cliente-api activa" });
+  res.status(200).json({ mensaje: "producto-api activa" });
 });
 
 app.listen(PORT, () => {
-  console.log(`cliente-api escuchando en el puerto ${PORT}`);
+  console.log(`producto-api escuchando en el puerto ${PORT}`);
 });
